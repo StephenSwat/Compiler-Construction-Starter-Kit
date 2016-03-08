@@ -1,0 +1,62 @@
+diff -rc src/framework/attribs.h.xsl fixed/framework/attribs.h.xsl
+*** src/framework/attribs.h.xsl	2011-02-01 16:15:50.000000000 +0100
+--- fixed/framework/attribs.h.xsl	2016-03-08 16:03:49.405810078 +0100
+***************
+*** 161,167 ****
+   * called N_nodename.
+   ****************************************************************************/
+      </xsl:text>
+!     <xsl:value-of select="'struct ATTRIBUNION { '"/>
+      <xsl:text>
+      </xsl:text>
+      <xsl:apply-templates select="node" mode="generate-attrib-union">
+--- 161,167 ----
+   * called N_nodename.
+   ****************************************************************************/
+      </xsl:text>
+!     <xsl:value-of select="'union ATTRIBUNION { '"/>
+      <xsl:text>
+      </xsl:text>
+      <xsl:apply-templates select="node" mode="generate-attrib-union">
+diff -rc src/framework/sons.h.xsl fixed/framework/sons.h.xsl
+*** src/framework/sons.h.xsl	2011-02-01 16:15:50.000000000 +0100
+--- fixed/framework/sons.h.xsl	2016-03-08 16:04:01.241735010 +0100
+***************
+*** 128,134 ****
+   * called N_nodename.
+   ****************************************************************************/
+      </xsl:text>
+!     <xsl:value-of select="'struct SONUNION { '"/>
+      <xsl:text>
+      </xsl:text>
+      <xsl:apply-templates select="node" mode="generate-sons-union">
+--- 128,134 ----
+   * called N_nodename.
+   ****************************************************************************/
+      </xsl:text>
+!     <xsl:value-of select="'union SONUNION { '"/>
+      <xsl:text>
+      </xsl:text>
+      <xsl:apply-templates select="node" mode="generate-sons-union">
+diff -rc src/framework/tree_basic.h fixed/framework/tree_basic.h
+*** src/framework/tree_basic.h	2016-01-28 11:19:22.000000000 +0100
+--- fixed/framework/tree_basic.h	2016-03-08 16:04:33.633529801 +0100
+***************
+*** 70,77 ****
+    int                  lineno;         /* line of definition */
+    int                  colno;         /* line of definition */
+    node*                error;          /* error node */
+!   struct SONUNION      sons;           /* the sons */
+!   struct ATTRIBUNION   attribs;        /* the nodes attributes */
+  };
+  
+  #include "node_basic.h"
+--- 70,77 ----
+    int                  lineno;         /* line of definition */
+    int                  colno;         /* line of definition */
+    node*                error;          /* error node */
+!   union SONUNION      sons;           /* the sons */
+!   union ATTRIBUNION   attribs;        /* the nodes attributes */
+  };
+  
+  #include "node_basic.h"

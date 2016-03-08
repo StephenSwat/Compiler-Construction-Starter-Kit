@@ -1,0 +1,94 @@
+Nur en fixed/demo: .count_operators.d
+Nur en fixed/demo: count_operators.o
+Nur en fixed/demo: .opt_sub.d
+Nur en fixed/demo: opt_sub.o
+Nur en fixed/demo: .rename_identifiers.d
+Nur en fixed/demo: rename_identifiers.o
+diff -rc src/framework/scanparse.c fixed/framework/scanparse.c
+*** src/framework/scanparse.c	2016-03-08 16:00:35.115049313 +0100
+--- fixed/framework/scanparse.c	2016-03-08 16:24:48.055651281 +0100
+***************
+*** 48,54 ****
+  
+  
+  #include <stdio.h>
+! 
+  #include "scanparse.h"
+  #include "dbug.h"
+  #include "globals.h"
+--- 48,54 ----
+  
+  
+  #include <stdio.h>
+! #include <string.h>
+  #include "scanparse.h"
+  #include "dbug.h"
+  #include "globals.h"
+***************
+*** 78,90 ****
+                 "SPdoScanParse() called with existing syntax tree.");
+    
+    if (global.cpp) {
+!     filename = STRcatn( 3,
+!                         ".",
+!                         global.infile,
+!                         ".cpp");
+    }
+    else {
+!     filename = STRcpy( global.infile);
+    }
+    
+    yyin = fopen( filename, "r");
+--- 78,87 ----
+                 "SPdoScanParse() called with existing syntax tree.");
+    
+    if (global.cpp) {
+!     asprintf(&filename, "%s.cpp", global.infile);
+    }
+    else {
+!     filename = strdup(global.infile);
+    }
+    
+    yyin = fopen( filename, "r");
+***************
+*** 108,119 ****
+    
+    DBUG_ENTER("SPdoRunPreProcessor");
+  
+!   cppcallstr = STRcatn( 5, 
+!                         "gcc -E ",
+!                         global.infile,
+!                         " > .",
+!                         global.infile,
+!                         ".cpp");
+    
+    err = system( cppcallstr);
+  
+--- 105,111 ----
+    
+    DBUG_ENTER("SPdoRunPreProcessor");
+  
+!   asprintf(&cppcallstr, "gcc -x c -E %s > %s.cpp", global.infile, global.infile);
+    
+    err = system( cppcallstr);
+  
+diff -rc src/global/phase.mac fixed/global/phase.mac
+*** src/global/phase.mac	2016-03-08 16:00:35.111049339 +0100
+--- fixed/global/phase.mac	2016-03-08 16:14:24.402123127 +0100
+***************
+*** 15,21 ****
+  SUBPHASE( cpp,
+            "Running C preprocessor",
+            SPdoRunPreProcessor, 
+!           NEVER,
+            ld)
+  
+  SUBPHASE( scp,
+--- 15,21 ----
+  SUBPHASE( cpp,
+            "Running C preprocessor",
+            SPdoRunPreProcessor, 
+!           ALWAYS,
+            ld)
+  
+  SUBPHASE( scp,
