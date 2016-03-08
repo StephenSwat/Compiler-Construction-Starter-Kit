@@ -50,13 +50,7 @@ echo "Running success tests..."
 for x in success/*.cvc; do
     TOTAL=$((TOTAL+1))
     $COMPILER $COMPILER_ARGS $x 1>/dev/null 2>/dev/null || {
-        ERROR=$(head -1 $x | grep '//' | cut -c4-);
-        if [ -n "$ERROR" ] && [ $SHOW_HINTS = true ]; then
-            echo -n "Test $x should not fail... ";
-            echo $ERROR;
-        else
-            echo "Test $x should not fail!";
-        fi
+        echo "Test $x should not fail!";
         FAIL=$((FAIL+1));
         continue;
     }
