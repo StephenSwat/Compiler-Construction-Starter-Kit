@@ -4,7 +4,7 @@
 CHECK_OUTPUT=false
 
 # If this is set to true, print a single line hint why a test should succeed or fail.
-SHOW_HINTS=true
+SHOW_HINTS=false
 
 # Fill in your compiler command and any flags here.
 COMPILER=cccp
