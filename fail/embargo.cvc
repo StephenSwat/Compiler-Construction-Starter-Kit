@@ -1,3 +1,5 @@
+// Should produce an error in the VM because no main is exported.
+
 #include "civic.h"
 
 int main() {

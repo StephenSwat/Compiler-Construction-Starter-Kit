@@ -1,3 +1,5 @@
+// Should produce a type checking error because funcall has bad arguments.
+
 #include "civic.h"
 
 int kaas(int a) {

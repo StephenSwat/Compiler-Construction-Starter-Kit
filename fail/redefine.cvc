@@ -1,3 +1,5 @@
+// Should produce a context analysis error because of a redefined variable.
+
 #include "civic.h"
 
 export int main() {

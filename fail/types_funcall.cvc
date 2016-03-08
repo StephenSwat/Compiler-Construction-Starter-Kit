@@ -1,3 +1,5 @@
+// Should produce a type checking error because funcalls also have a type.
+
 #include "civic.h"
 
 float kaas() {

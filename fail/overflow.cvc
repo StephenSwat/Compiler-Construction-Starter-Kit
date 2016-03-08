@@ -1,3 +1,5 @@
+// Should produce a parser error because the integer is too big.
+
 #include "civic.h"
 
 export int main() {

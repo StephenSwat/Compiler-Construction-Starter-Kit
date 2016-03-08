@@ -3,6 +3,9 @@
 # If this is set to true, compare the output of the user compiler to that of the reference compiler.
 CHECK_OUTPUT=false
 
+# If this is set to true, print a single line hint why a test should succeed or fail.
+SHOW_HINTS=true
+
 # Fill in your compiler command and any flags here.
 COMPILER=cccp
 COMPILER_ARGS=-t
@@ -31,13 +34,32 @@ command -v $COMPILER >/dev/null 2>&1 || { echo "$COMPILER is not an executable f
 echo "Running failure tests..."
 for x in fail/*.cvc; do
     TOTAL=$((TOTAL+1))
-    $COMPILER $COMPILER_ARGS $x 1>/dev/null 2>/dev/null && { echo "Test $x should not succeed!"; FAIL=$((FAIL+1)); }
+    $COMPILER $COMPILER_ARGS $x 1>/dev/null 2>/dev/null && {
+        ERROR=$(head -1 $x | grep '//' | cut -c4-);
+        if [ -n "$ERROR" ] && [ $SHOW_HINTS = true ]; then
+            echo -n "Test $x should not succeed... ";
+            echo $ERROR;
+        else
+            echo "Test $x should not succeed!";
+        fi
+        FAIL=$((FAIL+1));
+    }
 done
 
 echo "Running success tests..."
 for x in success/*.cvc; do
     TOTAL=$((TOTAL+1))
-    $COMPILER $COMPILER_ARGS $x 1>/dev/null 2>/dev/null || { echo "Test $x should not fail!"; FAIL=$((FAIL+1)); continue; }
+    $COMPILER $COMPILER_ARGS $x 1>/dev/null 2>/dev/null || {
+        ERROR=$(head -1 $x | grep '//' | cut -c4-);
+        if [ -n "$ERROR" ] && [ $SHOW_HINTS = true ]; then
+            echo -n "Test $x should not fail... ";
+            echo $ERROR;
+        else
+            echo "Test $x should not fail!";
+        fi
+        FAIL=$((FAIL+1));
+        continue;
+    }
 
     if [ $CHECK_OUTPUT = true ]; then
         diff <(execute $REFERENCE_COMPILER $REFERENCE_COMPILER_ARGS $x) \

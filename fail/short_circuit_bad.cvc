@@ -1,3 +1,5 @@
+// Should produce a context analysis error due to a function being undefined.
+
 int rv = 0;
 
 export int main() {

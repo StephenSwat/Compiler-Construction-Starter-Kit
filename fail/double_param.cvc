@@ -1,3 +1,5 @@
+// Should produce a context analysis error because parameter names are doubled.
+
 void kaas(int a, int a) {
     return 6.0;
 }

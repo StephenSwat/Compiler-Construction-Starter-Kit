@@ -1,3 +1,5 @@
+// Should produce a tree validation error due to vardecs following statement.
+
 export int main() {
     int a = 5;
     a = 6;

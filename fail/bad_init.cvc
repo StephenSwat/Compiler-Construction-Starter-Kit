@@ -1,3 +1,5 @@
+// Should produce a type checking error 0 is an int literal, not a float.
+
 #include "civic.h"
 
 export int main() {

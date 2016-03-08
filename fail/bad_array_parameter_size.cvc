@@ -1,3 +1,5 @@
+// Should produce a type checking error because array sizes don't match.
+
 #include "civic.h"
 
 void fill_matrix(float[n, m, o] matrix) {

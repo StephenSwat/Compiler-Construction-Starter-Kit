@@ -1,3 +1,5 @@
+// Should produce a type checking error because 7.0 is a float.
+
 #include "civic.h"
 
 export int main() {

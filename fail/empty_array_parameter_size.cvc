@@ -1,3 +1,5 @@
+// Should produce an error because an array is dimensionless.
+
 #include "civic.h"
 
 void fill_matrix(float[] matrix) {

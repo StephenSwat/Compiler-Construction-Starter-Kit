@@ -1,3 +1,5 @@
+// Should produce a syntax validity error because a vardec is after a fundef.
+
 #include "civic.h"
 
 export int main() {
