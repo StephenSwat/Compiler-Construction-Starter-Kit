@@ -1,0 +1,6 @@
+int rv = 0;
+
+export int main() {
+    if (false && kaas()) {}
+    return rv;
+}

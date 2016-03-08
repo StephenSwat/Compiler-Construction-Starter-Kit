@@ -1,0 +1,11 @@
+int rv = 0;
+
+bool kaas() {
+    rv = 1;
+    return true;
+}
+
+export int main() {
+    if (false && kaas()) {}
+    return rv;
+}

@@ -1,0 +1,10 @@
+int rv = 0;
+
+void kaas() {
+    int rv = 1;
+}
+
+export int main() {
+    kaas();
+	return rv;
+}

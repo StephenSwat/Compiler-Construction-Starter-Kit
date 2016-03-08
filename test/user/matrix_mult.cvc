@@ -1,0 +1,70 @@
+/*
+ * @file   matrix_mult.cvc
+ * @author Martha Szygula (10537988) and Stephen Swatman (10559442)
+ *
+ * @brief  This file implements matrix multiplication in Civilised C. Reads the
+ *         size of the matrix from stdin.
+ */
+
+#include "civic.h"
+
+/* Scan the matrices */
+void scanFloatMatrix(float[n, m] matFloat) {
+	for(int i = 0, n, 1) {
+		for(int j = 0, m, 1) {
+			matFloat[i, j] = scanFloat();
+		}
+	}
+	printNewlines(1);
+}
+
+/* Print those matrices */
+void printFloatMatrix(float[n, m] matFloat) {
+	for(int i = 0, n, 1) {
+		for(int j = 0, m, 1) {
+			printFloat(matFloat[i, j]);
+			printSpaces(1);
+		}
+		printNewlines(1);
+	}
+	printNewlines(1);
+}
+
+/* Calculate new matrix */
+void newFloatMatrix(float[n, m] matFloat1, float[k, l] matFloat2) {
+	float[n, l] matFloat3;
+	float sum = 0.0;
+
+	for(int i = 0, n, 1) {
+		for(int j = 0, l, 1) {
+			for(int y = 0, k, 1) {
+				sum = sum + matFloat1[i, y] * matFloat2[y, j];
+			}
+			matFloat3[i, j] = sum;
+			sum = 0.0;
+		}
+	}
+
+	printFloatMatrix(matFloat3);
+}
+
+/* Main to call the functions */
+export int main() {
+	int matrixFloatN1 = scanInt();
+	int matrixFloatM1 = scanInt();
+	int matrixFloatN2 = scanInt();
+	int matrixFloatM2 = scanInt();
+
+	float[matrixFloatN1, matrixFloatM1] matFloat1;
+	float[matrixFloatN2, matrixFloatM2] matFloat2;
+
+	scanFloatMatrix(matFloat1);
+	scanFloatMatrix(matFloat2);
+
+	printFloatMatrix(matFloat1);
+	printFloatMatrix(matFloat2);
+
+	newFloatMatrix(matFloat1, matFloat2);
+
+	return 0;
+}

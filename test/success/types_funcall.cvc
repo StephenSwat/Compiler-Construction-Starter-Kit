@@ -1,0 +1,11 @@
+#include "civic.h"
+
+float kaas() {
+    return 6.0;
+}
+
+export int main() {
+    float a = 0.0;
+    a = a + kaas();
+    return 0;
+}

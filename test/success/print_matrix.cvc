@@ -1,0 +1,35 @@
+/*
+ * @file   print_matrix.cvc
+ * @author Martha Szygula (10537988) and Stephen Swatman (10559442)
+ *
+ * @brief  This file prints a matrix. The matrix is predefined.
+ */
+
+#include "civic.h"
+
+void fill_matrix(float[n, m] matrix) {
+	for(int i = 0, n)
+		for(int j = 0, m)
+			matrix[i, j] = (float) i + (float) j + 0.5;
+}
+
+void print_matrix(float[n, m] matrix) {
+	for(int i = 0, n) {
+		for(int j = 0, m) {
+			printFloat(matrix[i, j]);
+			printSpaces(1);
+		}
+
+		printNewlines(1);
+	}
+}
+
+/* Main to call the functions */
+export int main() {
+	float[5, 3] matrix;
+
+	fill_matrix(matrix);
+	print_matrix(matrix);
+
+	return 0;
+}

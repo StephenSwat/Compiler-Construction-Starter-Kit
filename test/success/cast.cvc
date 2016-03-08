@@ -1,0 +1,8 @@
+#include "civic.h"
+
+export int main() {
+    int a = 10;
+    float b = (float) a;
+
+    return 0;
+}

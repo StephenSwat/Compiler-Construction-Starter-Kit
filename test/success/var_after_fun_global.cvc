@@ -1,0 +1,11 @@
+#include "civic.h"
+
+void kaas() {
+    printInt(6);
+}
+
+int a = 0;
+
+export int main() {
+    return 0;
+}

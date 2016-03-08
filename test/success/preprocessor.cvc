@@ -1,0 +1,6 @@
+#define N 100
+
+export int main() {
+    if (N == 100) return 0;
+    return 1;
+}

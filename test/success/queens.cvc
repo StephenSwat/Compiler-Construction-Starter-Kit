@@ -1,0 +1,57 @@
+/*
+ * @file   queens.cvc
+ * @author Martha Szygula (10537988) and Stephen Swatman (10559442)
+ *
+ * @brief  This file finds all solutions to the N-queens problem. N is set to
+ *         8 by default.
+ */
+
+#include "civic.h"
+
+bool is_safe(int[n] rows, int x, int y) {
+    if (y == 0) return true;
+
+    for (int i=0, y)
+        if (rows[i] == x || rows[i] == x + y - i || rows[i] == x - y + i)
+            return false;
+
+    return true;
+}
+
+bool unused(int t, float s, int[n, m] rows, int x, int y, float [b, c] a) {}
+
+void putboard(int[n] rows) {
+    for (int y=0, n) {
+        for (int x=0, n) {
+            if (x == rows[y]) printInt(1);
+            else printInt(0);
+            printSpaces(1);
+        }
+
+        printNewlines(1);
+    }
+
+    printNewlines(1);
+}
+
+void eight_queens_helper(int[n] rows, int y) {
+    for (int x = 0, n) {
+        if (is_safe(rows, x, y)) {
+            rows[y] = x;
+            if (y == n - 1)
+                putboard(rows);
+            else
+                eight_queens_helper(rows, y+1);
+        }
+    }
+}
+
+/* Main to call the functions */
+export int main() {
+    int n = 8;
+    int[n] rows;
+
+    eight_queens_helper(rows, 0);
+
+	return 0;
+}

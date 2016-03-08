@@ -1,0 +1,36 @@
+/*
+ * @file   primes.cvc
+ * @author Martha Szygula (10537988) and Stephen Swatman (10559442)
+ *
+ * @brief  This file finds a given number of prime numbers in Civilised C.
+ */
+
+#include "civic.h"
+
+bool is_prime(int y) {
+    int z = 2;
+
+    while (z * z <= y) {
+        if (y % z == 0) return false;
+        z = z + 1;
+    }
+
+    return true;
+}
+
+export int main() {
+    int n = 100;
+    int t = 2;
+
+    while (n > 0) {
+        if (is_prime(t)) {
+            n = n - 1;
+            printInt(t);
+            printNewlines(1);
+        }
+
+        t = t + 1;
+    }
+
+    return 0;
+}

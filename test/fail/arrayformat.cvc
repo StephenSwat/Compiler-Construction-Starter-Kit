@@ -1,0 +1,14 @@
+/*
+ * @file   fibonacci.cvc
+ * @author Martha Szygula (10537988) and Stephen Swatman (10559442)
+ *
+ * @brief  This file finds a given number of Fibonacci numbers in Civilised C
+ *         using relatively free variables.
+ */
+
+#include "civic.h"
+
+export int main() {
+    int[4] a = [1, 2 3, 4];
+    return 0;
+}

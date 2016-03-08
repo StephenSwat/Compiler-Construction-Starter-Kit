@@ -1,0 +1,7 @@
+#include "civic.h"
+
+export int main() {
+    float a = 0.0;
+    a = (5.0 + 7.0);
+    return 0;
+}

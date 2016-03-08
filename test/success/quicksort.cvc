@@ -1,0 +1,70 @@
+/*
+ * @file   quicksort.cvc
+ * @author Martha Szygula (10537988) and Stephen Swatman (10559442)
+ *
+ * @brief  This file implements quicksort on some predefined vectors in
+ *         Civilised C.
+ */
+
+#include "civic.h"
+
+
+void create_vector(int[n] vector) {
+	for(int i = 0, n) vector[i] = (5349 * (n + i)) % (n * n);
+}
+
+void print_vector(int[n] vector) {
+	for(int i = 0, n) {
+		printInt(vector[i]);
+		printSpaces(1);
+	}
+
+	printNewlines(1);
+}
+
+int partition(int[n] vector, int lo, int hi) {
+	int pivot = vector[hi];
+	int temp = vector[lo];
+	int i = lo;
+
+	for(int j = lo, hi) {
+		if(vector[j] <= pivot) {
+			temp = vector[i];
+			vector[i] = vector[j];
+			vector[j] = temp;
+			i = i + 1;
+		}
+	}
+
+	temp = vector[i];
+	vector[i] = vector[hi];
+	vector[hi] = temp;
+
+	return i;
+}
+
+void quicksort_helper(int[n] vector, int lo, int hi) {
+	int part;
+
+	if(lo < hi) {
+		part = partition(vector, lo, hi);
+		quicksort_helper(vector, lo, part - 1);
+		quicksort_helper(vector, part + 1, hi);
+	}
+}
+
+void quicksort(int[n] vector) {
+	quicksort_helper(vector, 0, n - 1);
+}
+
+/* Main to call the functions */
+export int main() {
+	int[20] vector;
+
+	create_vector(vector);
+	print_vector(vector);
+	quicksort(vector);
+	print_vector(vector);
+
+	return 0;
+}

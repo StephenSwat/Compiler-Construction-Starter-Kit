@@ -1,0 +1,23 @@
+/*
+ * @file   scan_matrix.cvc
+ * @author Martha Szygula (10537988) and Stephen Swatman (10559442)
+ *
+ * @brief  Reads in a matrix from stdin. Gets the size first, then the values.
+ */
+
+#include "civic.h"
+
+void scan_float_matrix(float[n, m] matFloat) {
+	for(int i = 0, n)
+		for(int j = 0, m)
+			matFloat[i, j] = scanFloat();
+}
+
+/* Main to call the functions */
+export int main() {
+	float[scanInt(), scanInt()] matrix;
+
+	scan_float_matrix(matrix);
+
+	return 0;
+}
