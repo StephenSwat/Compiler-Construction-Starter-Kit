@@ -1,0 +1,8 @@
+// Should give an error because array sizes don't match.
+
+void fun(int a, int[n] b) {}
+
+export int main() {
+    int [2, 2] b = 5;
+    fun(b);
+}

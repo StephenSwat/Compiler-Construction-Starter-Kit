@@ -1,0 +1,8 @@
+// Should produce a type checking error because binop types should match.
+
+#include "civic.h"
+
+export int main() {
+    else {}
+    return 0;
+}

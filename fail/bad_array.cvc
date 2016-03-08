@@ -1,0 +1,5 @@
+#include "civic.h"
+
+export int main() {
+    float[5] a = 4, 5, 7, 8, 9;
+}

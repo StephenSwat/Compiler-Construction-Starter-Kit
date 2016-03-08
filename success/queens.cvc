@@ -18,7 +18,9 @@ bool is_safe(int[n] rows, int x, int y) {
     return true;
 }
 
-bool unused(int t, float s, int[n, m] rows, int x, int y, float [b, c] a) {}
+bool unused(int t, float s, int[n, m] rows, int x, int y, float [b, c] a) {
+    return false;
+}
 
 void putboard(int[n] rows) {
     for (int y=0, n) {

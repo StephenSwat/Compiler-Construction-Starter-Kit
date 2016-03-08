@@ -1,0 +1,12 @@
+// Should produce an error because fun must return something.
+
+#include "civic.h"
+
+int fun() {
+    int v = 5;
+}
+
+export int main() {
+    fun();
+    return 0;
+}

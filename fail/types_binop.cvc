@@ -1,0 +1,11 @@
+// Should produce a type checking error because binop types should match.
+
+#include "civic.h"
+
+export int main() {
+    int a = 5;
+    if (6.0 > a) {
+        a = 6;
+    }
+    return 0;
+}

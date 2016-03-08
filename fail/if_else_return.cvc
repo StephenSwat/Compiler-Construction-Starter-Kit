@@ -1,0 +1,9 @@
+// Should give an error because main doesn't end in a return.
+
+export int main() {
+    if (true) {
+        return 1;
+    } else {
+        return 2;
+    }
+}

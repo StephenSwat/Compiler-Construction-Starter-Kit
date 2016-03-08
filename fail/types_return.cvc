@@ -1,0 +1,7 @@
+// Should give a type checking error because a int function cannot return float.
+
+int fun() {
+    return 6.0;
+}
+
+export int main() {}
