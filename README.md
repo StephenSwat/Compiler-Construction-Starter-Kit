@@ -72,3 +72,17 @@ you should get output similar to the following:
 To update the test suite submodule, run the following command:
 
     git submodule foreach git pull origin master
+
+## Contributing
+
+You are encouraged to add your own tests to the suite. Granted that you insert
+them into the right directory, the suite should adapt to any number of tests.
+For reference, the reference compiler should score a perfect score. Pleas make
+a pull request to share your tests with others so we can all profit from your
+work!
+
+## License
+
+This code is licensed under the Unlicense, so you are completely free to do
+anything you want with this code. Just don't come up to me crying if something
+goes wrong.
