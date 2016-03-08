@@ -1,0 +1,6 @@
+extern int a;
+extern int[a] b;
+
+export int main() {
+    return 0;
+}

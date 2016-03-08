@@ -1,0 +1,11 @@
+#include "civic.h"
+
+int kaas(int a, int b, bool c, float d) {
+    return 0;
+}
+
+export int main() {
+    int a = 0;
+    kaas(5, 1, false, 7.0, 8);
+    return 0;
+}
