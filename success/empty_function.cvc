@@ -1,0 +1,5 @@
+void foo() {}
+
+export int main() {
+    return 0;
+}

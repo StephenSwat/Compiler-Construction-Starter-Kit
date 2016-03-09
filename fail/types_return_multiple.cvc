@@ -11,4 +11,6 @@ int fun(int a) {
     return 5;
 }
 
-export int main() {}
+export int main() {
+    return 0;
+}
