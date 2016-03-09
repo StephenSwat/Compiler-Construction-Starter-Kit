@@ -1,6 +1,7 @@
 #include "civic.h"
 
+void foo(int[n, -m] b) {}
+
 export int main() {
-    float a = 5.654.4667;
     return 0;
 }

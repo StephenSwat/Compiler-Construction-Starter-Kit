@@ -1,6 +1,6 @@
 #include "civic.h"
 
 export int main() {
-    float a = 5.654.4667;
+    void a;
     return 0;
 }

@@ -1,6 +1,8 @@
+// Modulus only works on integers.
+
 #include "civic.h"
 
 export int main() {
-    float a = 5.654.4667;
+    6.0 % 5.0;
     return 0;
 }

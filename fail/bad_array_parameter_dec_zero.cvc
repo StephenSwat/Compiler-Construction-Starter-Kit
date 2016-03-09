@@ -1,6 +1,6 @@
 #include "civic.h"
 
 export int main() {
-    float a = 5.654.4667;
+    int[4, 0, 4] array_not_found;
     return 0;
 }

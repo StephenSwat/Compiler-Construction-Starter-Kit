@@ -1,0 +1,9 @@
+// For-loop needs two or three arguments.
+
+#include "civic.h"
+
+export int main() {
+    for (int i = 0) {}
+
+    return 0;
+}

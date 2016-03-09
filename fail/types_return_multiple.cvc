@@ -1,0 +1,14 @@
+// Should give a type checking error because a int function cannot return float.
+
+int fun(int a) {
+
+    if (a > 5) {
+        return 5.0;
+    } else {
+        return 8.0;
+    }
+
+    return 5;
+}
+
+export int main() {}
