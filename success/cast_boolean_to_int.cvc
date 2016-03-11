@@ -1,0 +1,11 @@
+#include "civic.h"
+
+export int main() {
+    int p = 5;
+    int c = (int) (5.0);
+    int a = c + (int) true;
+    int d = (int) true;
+    float e = (float) false;
+    int f = (int) (c > p);
+    return 0;
+}
