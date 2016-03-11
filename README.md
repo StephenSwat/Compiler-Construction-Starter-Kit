@@ -1,6 +1,6 @@
 # Compiler Construction starter kit
 
-A set of tests and miscellanious useful files for the Compiler Construction
+A set of tests and miscellaneous useful files for the Compiler Construction
 course at the University of Amsterdam.
 
 ## Test suite
@@ -11,7 +11,7 @@ be aware of.
 ### Installation
 
 The easiest way to install the test suite, would be to add it as a subdirectory
-to your own respository. To do this, use the following code from the root of
+to your own repository. To do this, use the following code from the root of
 your own project repository:
 
     git submodule add git@github.com:StephenSwat/Compiler-Construction-Starter-Kit.git test
@@ -52,7 +52,7 @@ virtual machine.
 If you enable the `CHECK_OUTPUT` flag, the test suite will also compare the
 output of your code after insertion into the virtual machine to the output of
 the reference compiler. This only makes sense if you are already generating
-bytecode!
+byte code!
 
 ### Running
 
@@ -75,7 +75,7 @@ you should get output similar to the following:
 ## Patches
 
 There are some blatant issues with the framework provided. Mainly, the C
-proprocessor is proken and secondly, the framework wastes a lot of memory by
+preprocessor is broken and secondly, the framework wastes a lot of memory by
 using strucs where is should use unions. Provided with this starter kit are
 patches that fix these issues. To fix the problems, run the following from your
 project root:
