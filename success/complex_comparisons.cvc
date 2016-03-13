@@ -1,0 +1,23 @@
+int a = 1;
+int b = 2;
+int c;
+int e;
+float f = 1.0;
+bool x = true;
+
+export int main() {
+    int test = 1;
+    int test2 = 2;
+    bool a = true;
+    bool b = true;
+
+    void testje() {
+        int bla = 1;
+        int yo = 2;
+    }
+
+    if (test == 1 || test2 == 2) return;
+
+    test = test2 + 1;
+    return 0;
+}

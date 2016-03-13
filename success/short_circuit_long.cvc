@@ -1,0 +1,12 @@
+int rv = 0;
+
+bool kaas() {
+    rv = 1;
+    return true;
+}
+
+export int main() {
+    int[5] a = 5;
+    if (false && kaas() && 5 + a[0] > 3 * 2 && 1 < 10) {}
+    return rv;
+}

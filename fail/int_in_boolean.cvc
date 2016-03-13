@@ -1,0 +1,5 @@
+export int main() {
+    bool[6] a = true;
+    if (false && 5 && false) {}
+    return 0;
+}
