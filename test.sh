@@ -29,6 +29,8 @@ execute() {
     rm -f _tmp_$1.s _tmp_$1.out
 }
 
+cd "$(dirname "${BASH_SOURCE[0]}")"
+shopt -s nullglob
 command -v $COMPILER >/dev/null 2>&1 || { echo "$COMPILER is not an executable file."; exit 1; }
 
 echo "Running failure tests..."
@@ -62,8 +64,7 @@ for x in success/*.cvc; do
     fi
 done
 
-echo "Passed $((TOTAL-FAIL)) out of $((TOTAL)) tests. Your grade: $(bc -l <<< "scale=1; ($TOTAL-$FAIL) * 10 / $TOTAL")."
+if [ $TOTAL -eq 0 ]; then echo "No tests were run. Make sure you are in the right directory."; exit 1; fi
 
-if [ $FAIL -eq 0 ]; then
-    echo "Well done! :)";
-fi
+echo "Passed $((TOTAL-FAIL)) out of $((TOTAL)) tests. Your grade: $(bc -l <<< "scale=1; ($TOTAL-$FAIL) * 10 / $TOTAL")."
+if [ $FAIL -eq 0 ]; then echo "Well done! :)"; fi

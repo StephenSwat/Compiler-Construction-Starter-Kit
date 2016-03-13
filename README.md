@@ -23,7 +23,7 @@ You can add a rule to your Makefile to easily run the test files for you. The
 rule should look something like the following:
 
     test: civicc
-	    @(cd test; ./test.sh)
+	    @test/test.sh
 
 Then, run `make test` to execute the full suite of tests.
 
