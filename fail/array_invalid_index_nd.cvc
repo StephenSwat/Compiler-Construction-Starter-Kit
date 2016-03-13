@@ -1,0 +1,8 @@
+// Should produce a parser error because a comma is missing.
+
+#include "civic.h"
+
+export int main() {
+    int[4, 5, 7] a = 0;
+    return a[3, 7, 4];
+}
