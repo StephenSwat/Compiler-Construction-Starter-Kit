@@ -1,0 +1,11 @@
+#include "civic.h"
+
+void foo(int[n] a) {
+    printInt(a[0]);
+}
+
+export int main() {
+	foo([0, 1, 2]);
+
+	return 0;
+}

@@ -1,0 +1,8 @@
+// Comparisons don't work on booleans, except for ==.
+
+#include "civic.h"
+
+export int main() {
+    if (4 && 7) {}
+    return 0;
+}

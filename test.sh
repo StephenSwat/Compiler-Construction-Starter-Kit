@@ -8,7 +8,7 @@ SHOW_HINTS=false
 
 # Fill in your compiler command and any flags here.
 COMPILER=cccp
-COMPILER_ARGS=-t
+COMPILER_ARGS="-t -z none"
 
 # Fill in the reference compiler and its flags here.
 REFERENCE_COMPILER=civcc

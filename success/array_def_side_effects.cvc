@@ -1,0 +1,10 @@
+int rv = 0
+
+void foo() {
+    rv = rv + 1;
+}
+
+export int main() {
+    int[5] = foo();
+    return rv - 1;
+}
