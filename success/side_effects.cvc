@@ -1,0 +1,11 @@
+int rv = 0;
+
+int foo() {
+    rv = rv + 1;
+    return 1;
+}
+
+export int main() {
+    int a = 0 * foo();
+    return 1 - rv;
+}

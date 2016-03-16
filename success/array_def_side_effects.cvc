@@ -1,4 +1,4 @@
-int rv = 0
+int rv = 0;
 
 void foo() {
     rv = rv + 1;
