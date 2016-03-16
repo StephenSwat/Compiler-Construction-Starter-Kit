@@ -1,10 +1,11 @@
 int rv = 0;
 
-void foo() {
+int foo() {
     rv = rv + 1;
+    return 5;
 }
 
 export int main() {
-    int[5] = foo();
+    int[5] a = foo();
     return rv - 1;
 }
