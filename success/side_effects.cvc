@@ -2,10 +2,10 @@ int rv = 0;
 
 int foo() {
     rv = rv + 1;
-    return 5;
+    return 1;
 }
 
 export int main() {
-    int[5] a = foo();
-    return rv - 1;
+    int a = 0 * foo();
+    return 1 - rv;
 }

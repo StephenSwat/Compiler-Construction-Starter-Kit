@@ -2,6 +2,7 @@
 
 export int main() {
     int a = 0;
+    int b = 0;
 
     for (int b = 0, 10, 2) {
         a = a + b;
@@ -11,7 +12,16 @@ export int main() {
         a = a + 7;
     } while (a < 100);
 
+    if (true) {
+        do {
+            a = a + 7;
+        } while (a < 100);
+    }
+
     while (a * a < 20000) {
+        while (b < 5) {
+            b = b + 1;
+        }
         a = a * 2;
     }
 
