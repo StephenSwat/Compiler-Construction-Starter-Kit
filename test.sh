@@ -1,14 +1,14 @@
 #!/bin/bash
 
 # If this is set to true, compare the output of the user compiler to that of the reference compiler.
-CHECK_OUTPUT=false
+CHECK_OUTPUT=true
 
 # If this is set to true, print a single line hint why a test should succeed or fail.
 SHOW_HINTS=false
 
 # Fill in your compiler command and any flags here.
 COMPILER=cccp
-COMPILER_ARGS="-t -z none"
+COMPILER_ARGS="-t"
 
 # Fill in the reference compiler and its flags here.
 REFERENCE_COMPILER=civcc
@@ -23,9 +23,9 @@ FAIL=0
 TOTAL=0
 
 execute() {
-    $1 $2 -o _tmp_$1.s $3
+    $1 $2 -o _tmp_$1.s $3 2>/dev/null
     $ASSEMBLER -o _tmp_$1.out _tmp_$1.s
-    $VM _tmp_$1.out >/dev/null 2>&1
+    $VM _tmp_$1.out 2>&1
     rm -f _tmp_$1.s _tmp_$1.out
 }
 
