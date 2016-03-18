@@ -45,9 +45,8 @@ encouraged), etc.
 ### Configuration
 
 After installing, fill in the file `test/test.sh` with the details of your
-compiler. Enter the name of your compiler and any flags you want to give it.
-Then enter the reference compiler, any flags for that, the assembler and the
-virtual machine.
+compiler. Enter the name of your compiler, the reference compiler, the assembler
+and the virtual machine.
 
 If you enable the `CHECK_OUTPUT` flag, the test suite will also compare the
 output of your code after insertion into the virtual machine to the output of
