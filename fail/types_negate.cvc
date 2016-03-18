@@ -1,0 +1,6 @@
+#include "civic.h"
+
+export int main() {
+    int a = !0;
+    return 0;
+}

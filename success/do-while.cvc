@@ -1,0 +1,9 @@
+export int main() {
+    int a = 0;
+
+    do {
+        a = a + 7;
+    } while (a < 100);
+
+    return 0;
+}
