@@ -9,7 +9,7 @@ CHECK_OUTPUT=true
 SHOW_HINTS=false
 
 # Fill in your compiler command here.
-COMPILER=civcc
+COMPILER=cccp
 
 # Fill in the reference compiler here.
 REFERENCE_COMPILER=civcc

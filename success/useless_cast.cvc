@@ -1,0 +1,18 @@
+
+export int main() {
+    int a = 0;
+    float b = 0.0;
+    bool c = false;
+
+    a = (int) 5;
+    a = (int) a + 5;
+
+    b = (float) 5.0;
+    b = (float) (int) 5;
+    b = (float) b;
+
+    c = (bool) !c;
+    c = (bool) true;
+
+    return 0;
+}
