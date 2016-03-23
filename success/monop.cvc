@@ -10,5 +10,7 @@ export int main() {
         b = 5;
     }
 
-    return -b;
+    printInt(-b);
+
+    return 0;
 }

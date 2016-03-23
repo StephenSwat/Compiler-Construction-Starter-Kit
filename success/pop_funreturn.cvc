@@ -1,0 +1,17 @@
+int foo() {
+    return 5;
+}
+
+void bar(int i) {
+    return;
+}
+
+export int main() {
+    bar(5);
+    bar(foo());
+    foo();
+    bar(foo());
+    bar(5);
+
+	return 0;
+}

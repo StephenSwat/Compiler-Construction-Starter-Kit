@@ -1,3 +1,5 @@
+#include "civic.h"
+
 int rv = 0;
 
 int foo() {
@@ -7,5 +9,6 @@ int foo() {
 
 export int main() {
     int[5] a = foo();
-    return rv - 1;
+    printInt(rv);
+    return 0;
 }

@@ -1,0 +1,6 @@
+int a = 5;
+
+export int main() {
+    int[a] a = 5;
+	return 0;
+}

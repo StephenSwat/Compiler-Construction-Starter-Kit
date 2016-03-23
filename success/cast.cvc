@@ -3,6 +3,6 @@
 export int main() {
     int a = 10;
     float b = (float) a;
-
+    printFloat(b);
     return 0;
 }

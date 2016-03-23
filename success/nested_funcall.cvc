@@ -1,0 +1,15 @@
+#include "civic.h"
+
+int foo() {
+    return 5;
+}
+
+int bar(int i) {
+    return 10;
+}
+
+export int main() {
+    printInt(bar(foo()));
+
+	return 0;
+}

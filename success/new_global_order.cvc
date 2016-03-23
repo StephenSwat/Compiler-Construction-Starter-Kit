@@ -1,8 +1,8 @@
 #include "civic.h"
 
 export int main() {
-    int a = 0;
-    a = -5;
     printInt(a);
-    return 0;
+	return 0;
 }
+
+int a = 5;

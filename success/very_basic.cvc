@@ -7,5 +7,6 @@ export int main() {
     b = a + 2;
     a = 7;
     c = a + b;
-	return c;
+    printInt(c);
+	return 0;
 }

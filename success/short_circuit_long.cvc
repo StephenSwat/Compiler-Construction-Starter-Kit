@@ -1,3 +1,5 @@
+#include "civic.h"
+
 int rv = 0;
 
 bool kaas() {
@@ -8,5 +10,6 @@ bool kaas() {
 export int main() {
     int[5] a = 5;
     if (false && kaas() && 5 + a[0] > 3 * 2 && 1 < 10) {}
-    return rv;
+    printInt(rv);
+    return 0;
 }

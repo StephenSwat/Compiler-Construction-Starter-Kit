@@ -3,6 +3,9 @@
 #include "civic.h"
 
 int foo(int[n, m] a, int b) {
+    printInt(n);
+    printInt(m);
+    printInt(a[0, b]);
     return a[0, b];
 }
 

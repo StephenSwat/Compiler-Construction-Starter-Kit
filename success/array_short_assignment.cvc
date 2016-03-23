@@ -4,5 +4,6 @@
 
 export int main() {
     int[4] a = [0, 0];
+    printInt(a[0]);
     return 0;
 }

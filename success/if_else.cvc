@@ -1,3 +1,5 @@
+#include "civic.h"
+
 export int main() {
     int a = 560;
     int b = 320;
@@ -9,5 +11,7 @@ export int main() {
         c = 1;
     }
 
-	return c;
+    printInt(c);
+
+	return 0;
 }
