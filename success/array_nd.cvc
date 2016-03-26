@@ -1,0 +1,9 @@
+#include "civic.h"
+
+export int main() {
+    int[2, 2] a = 10;
+    a[1, 1] = 5;
+    printInt(a[1, 0]);
+    printInt(a[0, 1]);
+    return 0;
+}

@@ -1,0 +1,8 @@
+#include "civic.h"
+
+export int main() {
+    if (5) {
+        printInt(1);
+    }
+    return 0;
+}

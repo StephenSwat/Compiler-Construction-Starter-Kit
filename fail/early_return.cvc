@@ -1,9 +1,0 @@
-// Should return 1, a failure.
-
-export int main() {
-    if (true) {
-        return 1;
-    }
-
-    return 0;
-}

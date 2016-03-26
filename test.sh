@@ -9,7 +9,7 @@ CHECK_OUTPUT=true
 SHOW_HINTS=false
 
 # Fill in your compiler command here.
-COMPILER=cccp
+COMPILER=civcc
 
 # Fill in the reference compiler here.
 REFERENCE_COMPILER=civcc
@@ -39,7 +39,7 @@ command -v $COMPILER >/dev/null 2>&1 || { echo "$COMPILER is not an executable f
 echo "Running failure tests..."
 for x in fail/*.cvc; do
     TOTAL=$((TOTAL+1))
-    $COMPILER $COMPILER_ARGS $x 1>/dev/null 2>/dev/null && execute $COMPILER usr $x >/dev/null && {
+    $COMPILER $x 1>/dev/null 2>/dev/null && {
         ERROR=$(head -1 $x | grep '//' | cut -c4-);
         if [ -n "$ERROR" ] && [ $SHOW_HINTS = true ]; then
             echo -n "Test $x should not succeed... ";
@@ -51,10 +51,19 @@ for x in fail/*.cvc; do
     }
 done
 
+echo "Running runtime failure tests..."
+for x in runtime/*.cvc; do
+    TOTAL=$((TOTAL+1))
+    $COMPILER $x 1>/dev/null 2>/dev/null && execute $COMPILER usr $x >/dev/null && {
+        echo "Test $x should not run!";
+        FAIL=$((FAIL+1));
+    }
+done
+
 echo "Running success tests..."
 for x in success/*.cvc; do
     TOTAL=$((TOTAL+1))
-    $COMPILER $COMPILER_ARGS $x 1>/dev/null 2>/dev/null || {
+    $COMPILER $x 1>/dev/null 2>/dev/null || {
         echo "Test $x should not fail!";
         FAIL=$((FAIL+1));
         continue;
