@@ -4,10 +4,6 @@
 # reference compiler.
 CHECK_OUTPUT=true
 
-# If this is set to true, print a single line hint why a test should succeed or
-# fail.
-SHOW_HINTS=false
-
 # Fill in your compiler command here.
 COMPILER=civcc
 
@@ -40,13 +36,7 @@ echo "Running failure tests..."
 for x in fail/*.cvc; do
     TOTAL=$((TOTAL+1))
     $COMPILER $x 1>/dev/null 2>/dev/null && {
-        ERROR=$(head -1 $x | grep '//' | cut -c4-);
-        if [ -n "$ERROR" ] && [ $SHOW_HINTS = true ]; then
-            echo -n "Test $x should not succeed... ";
-            echo $ERROR;
-        else
-            echo "Test $x should not succeed!";
-        fi
+        echo "Test $x should not succeed!";
         FAIL=$((FAIL+1));
     }
 done
@@ -77,6 +67,5 @@ for x in success/*.cvc; do
 done
 
 if [ $TOTAL -eq 0 ]; then echo "No tests were run. Make sure you are in the right directory."; exit 1; fi
-
 echo "Passed $((TOTAL-FAIL)) out of $((TOTAL)) tests. Your grade: $(bc -l <<< "scale=1; ($TOTAL-$FAIL) * 10 / $TOTAL")."
 if [ $FAIL -eq 0 ]; then echo "Well done! :)"; fi
