@@ -1,0 +1,18 @@
+#include "civic.h"
+
+void foo() {
+    int a = 6;
+
+    printInt(a);
+
+    if (5 > 6) {
+        a = a + 5;
+    }
+}
+
+export int main() {
+    int a = 0;
+    printInt(a);
+
+    return 0;
+}
