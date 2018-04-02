@@ -1,0 +1,5 @@
+export int main() {
+    for(int i = 0, 20)
+        i = i + i;
+    return 1;
+}

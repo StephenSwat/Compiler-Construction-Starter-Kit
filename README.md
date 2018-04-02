@@ -34,7 +34,7 @@ the name of your compiler in stead of having to give its path. One way of doing
 this is as follows:
 
     mkdir ~/.bin
-    echo 'PATH=$PATH:~/bin' >> ~/.bashrc
+    echo 'PATH=$PATH:~/.bin' >> ~/.bashrc
     ln -s [path to your compiler executabe] ~/.bin/my_compiler
 
 You should then extract the compiler toolchain (`civcc`, `civas`, `civrun` and
